@@ -31,7 +31,7 @@ model Post {
   description String
   imgSrc      String
   date        String
-  published   Boolean? @default(false)
+  published   Boolean? @default(true)
   author      User     @relation(fields: [authorId], references: [id])
   authorId    Int
   updateAt    DateTime @updatedAt
@@ -39,3 +39,8 @@ model Post {
 
   @@index(slug)
 }
+
+
+// UPDATE Post
+// SET published = TRUE
+// WHERE published = FALSE ;

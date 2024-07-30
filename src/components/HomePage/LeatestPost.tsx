@@ -43,9 +43,9 @@ import prisma from '../../lib/db';
 
 export default async function LatestPost() {
     const post = await prisma.post.findMany({
-        where: {
-            published: true,
-        },
+        // where: {
+        //     published: true,
+        // },
     });
     const user = await prisma.user.findUnique({
         where: {
